@@ -4,63 +4,26 @@
 :root{
   --fondo: rgb(255, 252, 248);
   --contrast: #fff3f3;
-  --primario:orange;
+  --primario: orange;
+  --secundario: #f9a825;
+  --texto: rgb(53, 53, 53);
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contenedor {
+  flex: 1; /* Este espacio se expande para dejar el footer al final */
+}
 body {
   margin: 0;
   font-family: "SUSE", sans-serif;
   color: rgb(53, 53, 53);
   background-color: rgb(255, 252, 248)
 }
-
-header {
-  max-width: 100%;
-  margin-top: 10px;
-  margin-inline: 15px;
-  display: flex;
-  border-bottom: rgb(253, 196, 90) solid;
-  justify-content: space-between;
-  align-items: center;
-
-}
-
-header h1 {
-  text-shadow: 1px 1px 2px gray;
-  margin: 0;  
-  font-size: 2.5rem;
-}
-
-header nav {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-nav a {
-  height: 5%;
-  display: inline-block;
-  min-width: 7rem; /* Reducido para ajustarse mejor */
-  padding: 0.5rem;
-  border-radius: 0.2rem;
-  border: solid 1px var(--primario);
-  text-align: center;
-  text-decoration: none;
-  color: black; /* Asegúrate de que el texto sea visible */
-}
-
-nav a[aria-current='page'] {
-  color: white;
-  background-color: var(--primario);
-}
-
-header nav a:hover {
-
-  background-color:var(--primario);
-  color: white;
-}
-
 main {
   padding: 1rem;
 }
@@ -74,9 +37,6 @@ h1 {
 p{
   font-size: 1rem;
 }
-
-
-
 .contenedor {
   margin-top: 30px;
   display: flex;
@@ -98,7 +58,6 @@ p{
   align-items: start;
   padding: 2rem;
   font-size: 20px;
-  
 
 }
 
@@ -119,77 +78,64 @@ p{
 
 }
 
-informacion input[type="text"] {
-  margin-top: 20px;
-  padding: 0.5rem;
-  margin-right: 10px;
-  border: 1px solid var(--primario);
-  border-radius: 5px;
-  width: 70%;
-  color: rgb(35, 35, 35);
-  font-weight: italic;
+/* Inputs estilizados */
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 15px;
+  border: 2px solid var(--primario);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--texto);
+  background-color: white;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
 
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+  border-color: var(--secundario);
+  background-color: var(--contrast);
+  box-shadow: 0 0 8px rgba(249, 168, 37, 0.5);
 }
 
 button {
   font-weight: bold;
   margin-top: 20px;
-  padding: 0.5rem 1rem;
-  border: solid var(--primario);
-  border-radius: 5px;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
   background-color: var(--primario);
   color: white;
-  box-shadow: 2px 2px 5px gray;
-
-
+  font-size: 1rem;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 
 button:hover {
-  background-color: var(--primario);
-  color: white;
+  background-color: var(--secundario);
+  box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
 
+.login {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
 
-
-  input[type="text"] {
-    width: 100%;
-    margin-left: 5px;
-  }
-
-  input{
-    margin: 5px;
-    width: 100%;
-    padding-block: 10px;
-    border: var(--primario) solid 3px;
-    border-radius: 10px;
-  }
-
-  .login{
-    display: inline-flex;
-
-  }
-  .login p{
-    margin-top: 30px;
-    margin-bottom: 0px;
-    margin-right: 10px;
-  }
+.login p {
+  margin: 0;
+  margin-right: 10px;
+  font-size: 1rem;
+  color: var(--texto);
+}
 
 
 @media screen and (max-width: 628px) {
 
     header h1 {
       font-size: 2rem;
-    }
-    nav{
-      height: 2%;
-    }
-    nav a{
-      margin-bottom: 2%;
-      display: inline-block;
-      min-width: 7rem; /* Reducido para ajustarse mejor */
-      padding: 0.5rem;
-      font-size: 1rem;
     }
 
 
@@ -216,15 +162,18 @@ button:hover {
     .informacion h1,.informacion p{
       text-align: center;
     }
-    input[type="text"], button {
-      width:50%;
-      width: auto;
-      text-align: center;
+  
+    input[type="text"], input[type="email"], input[type="password"], button {
+      width: 90%;
+      margin: 10px auto;
     }
 
-    .login{
-      display: inline-block;
+    .login {
+      flex-direction: column;
+    }
   
+    .login p {
+      margin-bottom: 10px;
     }
   }
   @media screen and (max-width: 418px) {

@@ -1,0 +1,59 @@
+.footer {
+    margin-top: 10px;
+    background-color: var(--primario);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .contenedor {
+    flex: 1; /* Este espacio se expande para dejar el footer al final */
+  }
+  .footer p {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  .footer span {
+    font-weight: bold;
+    color: white;
+  }
+  
+  .social-icons {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .social-icons a {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: var(--secundario);
+  }
+  
+  /* Ajustes para pantallas pequeñas */
+  @media screen and (max-width: 628px) {
+    .footer {
+      font-size: 0.8rem;
+    }
+  
+    .social-icons a {
+      font-size: 1rem;
+    }
+  }
+  

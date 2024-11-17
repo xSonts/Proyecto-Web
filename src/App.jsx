@@ -4,6 +4,8 @@ import Home from './assets/Componentes/Home';
 import MainContent from './assets/Componentes/MainContent';
 import ImageSection from './assets/Componentes/ImageSection';
 import LogIn from './assets/Componentes/LogIn';
+import Footer from './assets/Componentes/Footer';
+
 
 import './App.css';
 
@@ -17,34 +19,37 @@ function App() {
 
   return (
     <Router>
-      <Routes>
-        {/* Si el usuario está autenticado, redirige a Home */}
-        {isAuthenticated ? (
-          <Route path="/" element={<Home />} />
-        ) : (
-          <Route
-            path="/"
-            element={
-              <div className="contenedor">
-                {showLogin ? (
-                  <LogIn
-                    onLoginSuccess={handleLoginSuccess}
-                    switchToRegister={() => setShowLogin(false)}
-                  />
-                ) : (
-                  <MainContent
-                    switchToLogin={() => setShowLogin(true)}
-                  />
-                )}
-                <ImageSection /> {/* Imagen se muestra en registro e inicio de sesión */}
-              </div>
-            }
-          />
-        )}
-
-        {/* Redirigir automáticamente a Home si ya está autenticado */}
-        <Route path="/home" element={isAuthenticated ? <Home /> : <Navigate to="/" />} />
-      </Routes>
+      <div className="app-container">
+        <Routes>
+          {/* Si el usuario está autenticado, redirige a Home */}
+          {isAuthenticated ? (
+            <Route path="/" element={<Home />} />
+          ) : (
+            <Route
+              path="/"
+              element={
+                <div className="contenedor">
+                  {showLogin ? (
+                    <LogIn
+                      onLoginSuccess={handleLoginSuccess}
+                      switchToRegister={() => setShowLogin(false)}
+                    />
+                  ) : (
+                    <MainContent switchToLogin={() => setShowLogin(true)} />
+                  )}
+                  <ImageSection /> {/* Imagen se muestra en registro e inicio de sesión */}
+                </div>
+              }
+            />
+          )}
+  
+          {/* Redirigir automáticamente a Home si ya está autenticado */}
+          <Route path="/home" element={isAuthenticated ? <Home /> : <Navigate to="/" />} />
+        </Routes>
+  
+        {/* Footer se incluye siempre */}
+        <Footer />
+      </div>
     </Router>
   );
 }
