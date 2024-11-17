@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+}
+:root{
+  --fondo: rgb(255, 252, 248);
+  --contrast: #fff3f3;
+  --primario:orange;
+}
+
+body {
+  margin: 0;
+  font-family: "SUSE", sans-serif;
+  color: rgb(53, 53, 53);
+  background-color: rgb(255, 252, 248)
+}
+
+header {
+  max-width: 100%;
+  margin-top: 10px;
+  margin-inline: 15px;
+  display: flex;
+  border-bottom: rgb(253, 196, 90) solid;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+header h1 {
+  text-shadow: 1px 1px 2px gray;
+  margin: 0;  
+  font-size: 2.5rem;
+}
+
+header nav {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+nav a {
+  height: 5%;
+  display: inline-block;
+  min-width: 7rem; /* Reducido para ajustarse mejor */
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  border: solid 1px var(--primario);
+  text-align: center;
+  text-decoration: none;
+  color: black; /* Asegúrate de que el texto sea visible */
+}
+
+nav a[aria-current='page'] {
+  color: white;
+  background-color: var(--primario);
+}
+
+header nav a:hover {
+
+  background-color:var(--primario);
+  color: white;
+}
+
+main {
+  padding: 1rem;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: var(--primario);
+}
+
+p{
+  font-size: 1rem;
+}
+
+
+
+.contenedor {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  min-height: 80vh; /* Esto ayudará a centrar verticalmente en la pantalla */
+  border-top: var(--primario) solid;
+  border-bottom: var(--primario) solid;
+  margin-inline: 15px;
+  
+}
+
+.informacion {
+  flex: 0 1 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  padding: 2rem;
+  font-size: 20px;
+  
+
+}
+
+.imagen {
+  flex: 1;
+  max-width: 40%;
+  text-align: right;
+  text-align: center;
+}
+
+.imagen img {
+  max-width: 60%;
+  height: auto;
+  border-radius: 5px;
+}
+.imagen h1{
+  text-shadow: 1px 1px 2px gray;
+
+}
+
+informacion input[type="text"] {
+  margin-top: 20px;
+  padding: 0.5rem;
+  margin-right: 10px;
+  border: 1px solid var(--primario);
+  border-radius: 5px;
+  width: 70%;
+  color: rgb(35, 35, 35);
+  font-weight: italic;
+
+}
+
+button {
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 0.5rem 1rem;
+  border: solid var(--primario);
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--primario);
+  color: white;
+  box-shadow: 2px 2px 5px gray;
+
+
+}
+
+button:hover {
+  background-color: var(--primario);
+  color: white;
+}
+
+
+
+  input[type="text"] {
+    width: 100%;
+    margin-left: 5px;
+  }
+
+  input{
+    margin: 5px;
+    width: 100%;
+    padding-block: 10px;
+    border: var(--primario) solid 3px;
+    border-radius: 10px;
+  }
+
+  .login{
+    display: inline-flex;
+
+  }
+  .login p{
+    margin-top: 30px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+  }
+
+
+@media screen and (max-width: 628px) {
+
+    header h1 {
+      font-size: 2rem;
+    }
+    nav{
+      height: 2%;
+    }
+    nav a{
+      margin-bottom: 2%;
+      display: inline-block;
+      min-width: 7rem; /* Reducido para ajustarse mejor */
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+
+    .contenedor {
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+
+    }
+  
+    .informacion, .imagen {
+      max-width: 100%;
+      height: auto;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .imagen img{
+      width: 50%;
+      height: auto;
+    }
+
+    .informacion h1,.informacion p{
+      text-align: center;
+    }
+    input[type="text"], button {
+      width:50%;
+      width: auto;
+      text-align: center;
+    }
+
+    .login{
+      display: inline-block;
+  
+    }
+  }
+  @media screen and (max-width: 418px) {
+    header{
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      display: block;
+    }
+  }
+

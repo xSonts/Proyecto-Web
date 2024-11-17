@@ -1,0 +1,118 @@
+.home-container {
+    padding: 1rem;
+  }
+  .home-container h1{
+    margin-bottom: 0px;
+  }
+
+
+  
+  .home-container [type="text"] {
+    margin-top: 1rem;
+    padding-right: 100px;
+    height: 60px;
+    border: 1px solid orange;
+    border-radius: 5px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+.home-container nav{
+  display: inline;
+}
+
+  .recipes-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .recipe-card {
+    width: 300px;
+    border: 1px solid orange;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    text-align: center; /* Centra el contenido */
+  }
+  
+  .recipe-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .recipe-card h2 {
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+    color: orange;
+  }
+  
+  .recipe-card p {
+    margin: 0.5rem 0;
+  }
+  
+  .recipe-card p strong {
+    color: orange;
+  }
+  
+  .recipe-image {
+    width: 100%;
+    height: 150px; /* Ajusta la altura de la imagen */
+    object-fit: cover; /* Mantiene el aspecto de la imagen dentro del contenedor */
+    border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
+  }
+
+  .button-group {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .button-group button {
+    padding: 0.5rem 1rem;
+    border: 1px solid orange;
+    border-radius: 5px;
+    background-color: white;
+    color: orange;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .button-group button.active,
+  .button-group button:hover {
+    background-color: orange;
+    color: white;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logout-button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .logout-button:hover {
+    background-color: darkorange;
+  }
+  
+  
+  
+  
+  @media screen and (max-width: 768px) {
+    .recipe-card {
+      width: 100%;
+    }
+  }
+  
