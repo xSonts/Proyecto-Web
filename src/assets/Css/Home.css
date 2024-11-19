@@ -4,6 +4,9 @@
   .home-container h1{
     margin-bottom: 0px;
   }
+  h2{
+    text-align: center;
+  }
 
 
   
@@ -66,16 +69,18 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
+    
   }
   
   .button-group button {
-    padding: 0.5rem 1rem;
+    padding: 1rem 1rem;
     border: 1px solid orange;
     border-radius: 5px;
     background-color: white;
     color: orange;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
+    
   }
 
   button{

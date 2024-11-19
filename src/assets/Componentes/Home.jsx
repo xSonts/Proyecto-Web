@@ -15,7 +15,7 @@ const recipesData =
       "time": "15 minutos",
       "portions": "2 porciones",
       "advice": "Puedes agregar queso feta o nueces para un toque crujiente.",
-      "image": "https://cf-store.widencdn.net/mccormick/d/f/d/dfdbd709-b117-4052-a330-2c77059b4b10.jpg?response-content-disposition=inline%3B%20filename%3D%22Ensalada_de_Aguacate_Recipes_800x800.jpg%22&response-content-type=image%2Fjpeg&Expires=1732049389&Signature=DYwMMyo80hUEJiHeROc4396OGD~5Yskbw~xWD5stAMnfotm9vXMSixksot934R7qnF2EQoXmwKBHXN9iIPEATwTOqLGtQJGP8FCpnF8ka87Pn-PDRcI9d9qctxi~FTJzmAPemXjbWfsMRPVyeZOZwQYKYn3V~oMXjOfr6ch9bGJbQ5DlVCMGl0GBGo7XDbdcdWAr32ff2WfRjCKygSnxP46p3xdR~oeTLvqmPSWyknHRQTENq9HTbhcyeRVx9hbZG55bRFihkqcNHf62RClBSFQiJiui1LgkfsDHAYFN8ID84MRi~~CBO5Yz0dWqJ1V1ivY-e2s5GhW3JGLfnM0jXA__&Key-Pair-Id=APKAJD5XONOBVWWOA65A"
+      "image": "https://comedera.com/wp-content/uploads/sites/9/2018/06/tania-melnyczuk-anO6xwuo9So-unsplash.jpg"
     },
     {
       "id": 2,
