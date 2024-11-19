@@ -9,15 +9,7 @@
   --texto: rgb(53, 53, 53);
 }
 
-.app-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
 
-.contenedor {
-  flex: 1; /* Este espacio se expande para dejar el footer al final */
-}
 body {
   margin: 0;
   font-family: "SUSE", sans-serif;
@@ -131,6 +123,15 @@ button:hover {
   color: var(--texto);
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contenedor {
+  flex: 1; /* Este espacio se expande para dejar el footer al final */
+}
 
 @media screen and (max-width: 628px) {
 
@@ -170,6 +171,7 @@ button:hover {
 
     .login {
       flex-direction: column;
+      width: 100%;
     }
   
     .login p {

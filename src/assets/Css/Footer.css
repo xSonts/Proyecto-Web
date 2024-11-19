@@ -9,15 +9,7 @@
     width: 100%;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   }
-  .app-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
   
-  .contenedor {
-    flex: 1; /* Este espacio se expande para dejar el footer al final */
-  }
   .footer p {
     margin: 0;
     font-size: 1rem;

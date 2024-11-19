@@ -17,9 +17,6 @@
     justify-content: center;
     align-items: center;
   }
-.home-container nav{
-  display: inline;
-}
 
   .recipes-list {
     display: flex;
@@ -107,12 +104,31 @@
     background-color: darkorange;
   }
   
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    flex: 1; /* Este espacio se expande para dejar el footer al final */
+
+  }
+  
+ 
+  
   
   
   
   @media screen and (max-width: 768px) {
     .recipe-card {
-      width: 100%;
+      width: 80%;
+    }
+    .header {
+      display: flex; /* Cambiar a flexbox para centrar contenido */
+      flex-direction: column; /* Apila los elementos verticalmente */
+      align-items: center; /* Centra horizontalmente los elementos */
+      justify-content: center; /* Centra verticalmente los elementos */
+      text-align: center; /* Asegura que el texto también esté centrado */
+      margin: 0 auto; /* Centra el contenedor en la página */
+      padding: 10px;
     }
   }
   
