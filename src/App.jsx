@@ -6,7 +6,6 @@ import ImageSection from './assets/Componentes/ImageSection';
 import LogIn from './assets/Componentes/LogIn';
 import Footer from './assets/Componentes/Footer';
 
-
 import './App.css';
 
 function App() {
@@ -15,6 +14,11 @@ function App() {
 
   const handleLoginSuccess = () => {
     setIsAuthenticated(true);
+  };
+
+  const handleRegisterSuccess = () => {
+    // Al completar el registro, cambiamos a la vista de login
+    setShowLogin(true);
   };
 
   return (
@@ -35,18 +39,21 @@ function App() {
                       switchToRegister={() => setShowLogin(false)}
                     />
                   ) : (
-                    <MainContent switchToLogin={() => setShowLogin(true)} />
+                    <MainContent 
+                      switchToLogin={() => setShowLogin(true)} 
+                      onRegisterSuccess={handleRegisterSuccess} // Pasamos la función de redirección
+                    />
                   )}
                   <ImageSection /> {/* Imagen se muestra en registro e inicio de sesión */}
                 </div>
               }
             />
           )}
-  
+
           {/* Redirigir automáticamente a Home si ya está autenticado */}
           <Route path="/home" element={isAuthenticated ? <Home /> : <Navigate to="/" />} />
         </Routes>
-  
+
         {/* Footer se incluye siempre */}
         <Footer />
       </div>

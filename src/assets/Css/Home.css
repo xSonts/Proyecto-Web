@@ -77,6 +77,10 @@
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
   }
+
+  button{
+    margin-inline: 2px;
+  }
   
   .button-group button.active,
   .button-group button:hover {

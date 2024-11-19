@@ -3,16 +3,18 @@ import { auth, db } from '../FireBase';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 
-const MainContent = ({ switchToLogin }) => {
+const MainContent = ({ switchToLogin, onRegisterSuccess }) => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState(""); // Para controlar el tipo de mensaje (éxito o error)
 
   const handleRegister = async () => {
     if (password !== confirmPassword) {
       setMessage("Las contraseñas no coinciden.");
+      setMessageType("error");
       return;
     }
 
@@ -28,9 +30,16 @@ const MainContent = ({ switchToLogin }) => {
       });
 
       setMessage("Registro exitoso");
+      setMessageType("success");
+
+      // Esperar 2 segundos antes de redirigir al login
+      setTimeout(() => {
+        onRegisterSuccess();  // Cambia la vista a Login
+      }, 2000);
     } catch (error) {
       console.error("Error en el registro:", error.message);
       setMessage("Error en el registro. Intente nuevamente.");
+      setMessageType("error");
     }
   };
 
@@ -66,14 +75,20 @@ const MainContent = ({ switchToLogin }) => {
         value={confirmPassword}
         onChange={(e) => setConfirmPassword(e.target.value)}
       />
-            <button onClick={handleRegister}>REGISTRATE</button>
-            {message && <p>{message}</p>}
+      <button onClick={handleRegister}>REGISTRATE</button>
+      
+      {message && (
+        <div 
+          className={`message ${messageType === "success" ? "success" : "error"}`}
+        >
+          {message}
+        </div>
+      )}
+
       <div className="login">
-
-      <p>¿Ya tienes cuenta?</p>
-      <button onClick={switchToLogin}>Inicia sesión</button>
+        <p>¿Ya tienes cuenta?</p>
+        <button onClick={switchToLogin}>Inicia sesión</button>
       </div>
-
     </div>
   );
 };
